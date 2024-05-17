@@ -27,16 +27,14 @@ class ButtonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Jmas'),
+        backgroundColor: Color(0xff7996d4),
+        title: const Text('Jmas', style: TextStyle(color: Colors.white)),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue.shade200, // Color azul pastel
-              ),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -47,9 +45,6 @@ class ButtonPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue.shade200, // Color azul pastel
-              ),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -60,9 +55,6 @@ class ButtonPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue.shade200, // Color azul pastel
-              ),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -73,9 +65,6 @@ class ButtonPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue.shade200, // Color azul pastel
-              ),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -86,9 +75,6 @@ class ButtonPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue.shade200, // Color azul pastel
-              ),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -263,9 +249,6 @@ class _Form1State extends State<Form1> {
           ),
           const SizedBox(height: 10),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlue.shade200, // Color azul pastel
-            ),
             onPressed: () {
               print(nombreController.text);
               print(apellidoController.text);
@@ -275,7 +258,7 @@ class _Form1State extends State<Form1> {
               print(correoController.text);
             },
             child: const Text(
-              'Regristrar',
+              'Registrar',
               style: TextStyle(
                 fontSize: 30,
               ),
@@ -354,28 +337,28 @@ class _Form2State extends State<Form2> {
             controller: correoController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa tu correo',
+              hintText: 'ingresa el correo',
             ),
           ),
-          const Text('Monto a pagar'),
+          const Text('monton a pagar'),
           const SizedBox(height: 5),
           TextField(
             controller: montonapagarController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa el monto a pagar',
+              hintText: 'ingresa el monton a pagar',
             ),
           ),
-          const Text('Codigo postal'),
+          const Text('codigo postal'),
           const SizedBox(height: 5),
           TextField(
             controller: codigopostalController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa el codigo postal',
+              hintText: 'ingresa tu codigo postal',
             ),
           ),
-          const Text('Numero de cuenta'),
+          const Text('numero de cuenta'),
           const SizedBox(height: 5),
           TextField(
             controller: numerocuentaController,
@@ -386,21 +369,17 @@ class _Form2State extends State<Form2> {
           ),
           const SizedBox(height: 10),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlue.shade200, // Color azul pastel
-            ),
             onPressed: () {
               print(idreciboController.text);
               print(apellidoController.text);
               print(fechaController.text);
-              print(telefonoController.text);
               print(correoController.text);
               print(montonapagarController.text);
               print(codigopostalController.text);
               print(numerocuentaController.text);
             },
             child: const Text(
-              'Registrar Pago',
+              'Registrar',
               style: TextStyle(
                 fontSize: 30,
               ),
@@ -420,15 +399,13 @@ class Form3 extends StatefulWidget {
 }
 
 class _Form3State extends State<Form3> {
-  TextEditingController idreciboController = TextEditingController();
+  TextEditingController idclienteController = TextEditingController();
+  TextEditingController numerocuentaController = TextEditingController();
+  TextEditingController codigopostalController = TextEditingController();
+  TextEditingController nombreController = TextEditingController();
   TextEditingController apellidoController = TextEditingController();
-  TextEditingController fechaController = TextEditingController();
   TextEditingController telefonoController = TextEditingController();
   TextEditingController correoController = TextEditingController();
-  TextEditingController montonapagarController = TextEditingController();
-  TextEditingController codigopostalController = TextEditingController();
-  TextEditingController numerocuentaController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -436,17 +413,48 @@ class _Form3State extends State<Form3> {
       child: ListView(
         shrinkWrap: true,
         children: [
-          const Text('idRecibo'),
+          const Text('id cliente'),
           const SizedBox(height: 5),
           TextField(
-            controller: idreciboController,
+            controller: idclienteController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa el id de tu recibo',
+              hintText: 'ingresa tu id',
+            ),
+            obscureText: true,
+          ),
+          const SizedBox(height: 10),
+          const Text('numero de cuenta'),
+          const SizedBox(height: 5),
+          TextField(
+            controller: numerocuentaController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'ingresa tu numero de cuenta',
             ),
           ),
           const SizedBox(height: 10),
-          const Text('Apellido'),
+          const Text('codigo postal'),
+          const SizedBox(height: 5),
+          TextField(
+            controller: codigopostalController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'ingresa tu codigo postal',
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Text('nombre'),
+          const SizedBox(height: 5),
+          TextField(
+            controller: nombreController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'ingresa tu nombre',
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Text('apellido'),
           const SizedBox(height: 5),
           TextField(
             controller: apellidoController,
@@ -455,15 +463,7 @@ class _Form3State extends State<Form3> {
               hintText: 'ingresa tu apellido',
             ),
           ),
-          const Text('fecha'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: fechaController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa la fecha de la transaccion',
-            ),
-          ),
+          const SizedBox(height: 10),
           const Text('telefono'),
           const SizedBox(height: 5),
           TextField(
@@ -473,6 +473,7 @@ class _Form3State extends State<Form3> {
               hintText: 'ingresa tu telefono',
             ),
           ),
+          const SizedBox(height: 10),
           const Text('correo'),
           const SizedBox(height: 5),
           TextField(
@@ -482,50 +483,19 @@ class _Form3State extends State<Form3> {
               hintText: 'ingresa tu correo',
             ),
           ),
-          const Text('Monto a pagar'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: montonapagarController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa el monto a pagar',
-            ),
-          ),
-          const Text('Codigo postal'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: codigopostalController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa el codigo postal',
-            ),
-          ),
-          const Text('Numero de cuenta'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: numerocuentaController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa el numero de cuenta',
-            ),
-          ),
           const SizedBox(height: 10),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlue.shade200, // Color azul pastel
-            ),
             onPressed: () {
-              print(idreciboController.text);
+              print(idclienteController.text);
+              print(numerocuentaController.text);
+              print(codigopostalController.text);
+              print(nombreController.text);
               print(apellidoController.text);
-              print(fechaController.text);
               print(telefonoController.text);
               print(correoController.text);
-              print(montonapagarController.text);
-              print(codigopostalController.text);
-              print(numerocuentaController.text);
             },
             child: const Text(
-              'Registrar Pago',
+              'Registrar',
               style: TextStyle(
                 fontSize: 30,
               ),
@@ -545,14 +515,12 @@ class Form4 extends StatefulWidget {
 }
 
 class _Form4State extends State<Form4> {
-  TextEditingController idreciboController = TextEditingController();
-  TextEditingController apellidoController = TextEditingController();
-  TextEditingController fechaController = TextEditingController();
-  TextEditingController telefonoController = TextEditingController();
-  TextEditingController correoController = TextEditingController();
-  TextEditingController montonapagarController = TextEditingController();
-  TextEditingController codigopostalController = TextEditingController();
+  TextEditingController tramiteController = TextEditingController();
+  TextEditingController oficinaController = TextEditingController();
   TextEditingController numerocuentaController = TextEditingController();
+  TextEditingController nombreController = TextEditingController();
+  TextEditingController apellidoController = TextEditingController();
+  TextEditingController telefonoController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -561,17 +529,37 @@ class _Form4State extends State<Form4> {
       child: ListView(
         shrinkWrap: true,
         children: [
-          const Text('idRecibo'),
+          const Text('Tramite'),
           const SizedBox(height: 5),
           TextField(
-            controller: idreciboController,
+            controller: tramiteController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa el id de tu recibo',
+              hintText: 'Ingresar el tramite que necesitas ',
             ),
           ),
           const SizedBox(height: 10),
-          const Text('Apellido'),
+          const Text('oficina'),
+          const SizedBox(height: 5),
+          TextField(
+            controller: oficinaController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Ingresa la oficina mas cerca de tu casa',
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Text('nombre'),
+          const SizedBox(height: 5),
+          TextField(
+            controller: nombreController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'ingresa tu nombre',
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Text('apellido'),
           const SizedBox(height: 5),
           TextField(
             controller: apellidoController,
@@ -580,15 +568,7 @@ class _Form4State extends State<Form4> {
               hintText: 'ingresa tu apellido',
             ),
           ),
-          const Text('fecha'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: fechaController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa la fecha de la transaccion',
-            ),
-          ),
+          const SizedBox(height: 10),
           const Text('telefono'),
           const SizedBox(height: 5),
           TextField(
@@ -598,59 +578,17 @@ class _Form4State extends State<Form4> {
               hintText: 'ingresa tu telefono',
             ),
           ),
-          const Text('correo'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: correoController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa tu correo',
-            ),
-          ),
-          const Text('Monto a pagar'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: montonapagarController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa el monto a pagar',
-            ),
-          ),
-          const Text('Codigo postal'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: codigopostalController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa el codigo postal',
-            ),
-          ),
-          const Text('Numero de cuenta'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: numerocuentaController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa el numero de cuenta',
-            ),
-          ),
           const SizedBox(height: 10),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlue.shade200, // Color azul pastel
-            ),
             onPressed: () {
-              print(idreciboController.text);
+              print(tramiteController.text);
+              print(oficinaController.text);
+              print(nombreController.text);
               print(apellidoController.text);
-              print(fechaController.text);
               print(telefonoController.text);
-              print(correoController.text);
-              print(montonapagarController.text);
-              print(codigopostalController.text);
-              print(numerocuentaController.text);
             },
             child: const Text(
-              'Registrar Pago',
+              'Registrar',
               style: TextStyle(
                 fontSize: 30,
               ),
@@ -671,13 +609,11 @@ class Form5 extends StatefulWidget {
 
 class _Form5State extends State<Form5> {
   TextEditingController idreciboController = TextEditingController();
-  TextEditingController apellidoController = TextEditingController();
-  TextEditingController fechaController = TextEditingController();
-  TextEditingController telefonoController = TextEditingController();
   TextEditingController correoController = TextEditingController();
-  TextEditingController montonapagarController = TextEditingController();
-  TextEditingController codigopostalController = TextEditingController();
+  TextEditingController contrasenaController = TextEditingController();
   TextEditingController numerocuentaController = TextEditingController();
+  TextEditingController nombreController = TextEditingController();
+  TextEditingController rfcController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -686,41 +622,13 @@ class _Form5State extends State<Form5> {
       child: ListView(
         shrinkWrap: true,
         children: [
-          const Text('idRecibo'),
+          const Text('idrecibo'),
           const SizedBox(height: 5),
           TextField(
             controller: idreciboController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa el id de tu recibo',
-            ),
-          ),
-          const SizedBox(height: 10),
-          const Text('Apellido'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: apellidoController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa tu apellido',
-            ),
-          ),
-          const Text('fecha'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: fechaController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa la fecha de la transaccion',
-            ),
-          ),
-          const Text('telefono'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: telefonoController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa tu telefono',
+              hintText: 'ingresa tu id',
             ),
           ),
           const Text('correo'),
@@ -732,50 +640,54 @@ class _Form5State extends State<Form5> {
               hintText: 'ingresa tu correo',
             ),
           ),
-          const Text('Monto a pagar'),
+          const Text('contraseña'),
           const SizedBox(height: 5),
           TextField(
-            controller: montonapagarController,
+            controller: contrasenaController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa el monto a pagar',
+              hintText: 'ingresa tu contraseña',
             ),
           ),
-          const Text('Codigo postal'),
-          const SizedBox(height: 5),
-          TextField(
-            controller: codigopostalController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'ingresa el codigo postal',
-            ),
-          ),
-          const Text('Numero de cuenta'),
+          const Text('numero de cuenta'),
           const SizedBox(height: 5),
           TextField(
             controller: numerocuentaController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'ingresa el numero de cuenta',
+              hintText: 'ingresa tu numero de cuenta',
+            ),
+          ),
+          const Text('nombre'),
+          const SizedBox(height: 5),
+          TextField(
+            controller: nombreController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'ingresa tu nombre',
+            ),
+          ),
+          const Text('RFC'),
+          const SizedBox(height: 5),
+          TextField(
+            controller: rfcController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'ingresa tu RFC',
             ),
           ),
           const SizedBox(height: 10),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlue.shade200, // Color azul pastel
-            ),
             onPressed: () {
               print(idreciboController.text);
-              print(apellidoController.text);
-              print(fechaController.text);
-              print(telefonoController.text);
               print(correoController.text);
-              print(montonapagarController.text);
-              print(codigopostalController.text);
+              print(contrasenaController.text);
               print(numerocuentaController.text);
+              print(nombreController.text);
+              print(rfcController.text);
             },
             child: const Text(
-              'Registrar Pago',
+              'Regristrar',
               style: TextStyle(
                 fontSize: 30,
               ),
